@@ -5,30 +5,30 @@
   "dependencies": {
     "@kubernetes/client-node": "^0.15.1",
     "@patternfly/patternfly": "^4.132.2",
-    "@patternfly/react-core": "^4.152.4",
+    "@patternfly/react-core": "^4.162.3",
     "next": "^11.1.1",
     "next-transpile-modules": "^8.0.0",
-    "prom-client": "^14.0.0",
+    "prom-client": "^14.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "swr": "^1.0.0",
-    "web-vitals": "^2.1.0"
+    "swr": "^1.0.1",
+    "web-vitals": "^2.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
-    "@types/react": "^17.0.19",
-    "@types/react-dom": "^17.0.8",
-    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@types/react": "^17.0.31",
+    "@types/react-dom": "^17.0.10",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.25.3",
-    "prettier": "^2.3.1",
-    "sass": "^1.41.1",
-    "typescript": "^4.4.2"
+    "eslint-plugin-react": "^7.26.1",
+    "prettier": "^2.4.1",
+    "sass": "^1.43.3",
+    "typescript": "^4.4.4"
   },
   "scripts": {
     "dev": "next dev",

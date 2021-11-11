@@ -33,7 +33,7 @@ import { setMeteorsToLocalStorage, getMeteorsFromLocalStorage } from '../localst
 
 const MeteorTile = ({ name, content, isLoading, phase, pipelines, localMeteors, setLocalMeteors }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const launchButtons = (pipelines || []).map((p) => ({ ...p, label: PIPELINES[p.name]?.label || p.name }));
+  const launchButtons = (pipelines || []).map((p) => ({ ...p, label: PIPELINES.filter((c) => c.value === p.name)[0]?.label || p.name }));
 
   const handleToggleLocalMeteors = () => {
     if (localMeteors.includes(name)) {
@@ -102,11 +102,13 @@ MeteorTile.propTypes = {
 
 const Meteors = () => {
   const { data: meteors, isLoading } = useMeteors();
-  const [localMeteors, setLocalMeteors] = useState([]);
+  const [localMeteors, setLocalMeteors] = useState(null);
   const [toggle, setToggle] = useState(true);
 
   useEffect(() => {
-    setMeteorsToLocalStorage(localMeteors);
+    if (localMeteors !== null) {
+      setMeteorsToLocalStorage(localMeteors);
+    }
   }, [localMeteors]);
 
   useEffect(() => {
@@ -123,7 +125,7 @@ const Meteors = () => {
     </EmptyState>
   );
 
-  const meteorsToDisplay = (meteors || []).filter((m) => (toggle ? localMeteors.includes(m.metadata.name) : true));
+  const meteorsToDisplay = (meteors || []).filter((m) => (toggle ? localMeteors?.includes(m.metadata.name) : true));
 
   return (
     <Flex direction={{ default: 'column' }}>
